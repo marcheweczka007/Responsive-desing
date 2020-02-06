@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.nav {
+    height: 4em;
+    background-color: antiquewhite;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 11;
+}
+.nav-logo {
+    font-size: 40px;
+    background-color: blueviolet;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.nav-menu  {
+    right: 0;
+    top:0;
+    position: absolute;
+}
+.main {
+    position: relative;
+    display: block;
+    min-height: 30vh;
+   
+}
+.menu-items {
+    display: flex;
+    justify-content: space-evenly;
+    visibility: hidden;
+}
+.article {
+
+    margin-top: 1em;
+   
+    overflow: hidden;
+    padding: 1em;
+    background-color: rgba(0, 0, 0, 0.342);
+    min-height: 30vh;
+  
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3 1fr) ;
+}
+.grid-news {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.news {
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 1em;
+    background-color: rgb(146, 146, 143);
+}
+.grid-info {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.info {
+    height: 300px;
+    margin: 1em;
+    background-color: rgb(80, 79, 78); 
+}
+
+@media (min-width:768px){
+    .nav-menu {
+        visibility: hidden;
+    }
+    .article-large {
+        background-color: rgb(71, 69, 69);
+        grid-column: 1/2;
+        grid-row: 1/4;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    .article-small {
+        grid-column: 2/3;
+    }
+    .grid-news {
+        display: grid;
+        grid-template-columns: repeat(4 ,1fr);
+    }
+    .news {
+        padding: 1em;
+        color: white;
+        text-align: left;
+        font-size: 20px;
+        margin: 1em;
+        background-color: rgb(68, 68, 67);
+    }
+    .grid-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .menu-items {
+        display: flex;
+        justify-content: space-evenly;
+        font-size: 25px;
+        visibility: visible;
+        list-style: none;
+        border-bottom: 2px dotted black;
+    }
+    .nav-logo {
+        font-size: 40px;
+    }
+}
+@media (min-width:1068px){
+    .grid-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .nav-logo {
+        visibility: hidden;
+    }
+    .menu-items {
+        justify-items: space-around;
+    }
+}
